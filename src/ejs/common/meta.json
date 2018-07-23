@@ -1,0 +1,14 @@
+{
+  "default": {
+    "title": "default",
+    "description": "description",
+    "keyword": "keyword",
+    "canonical": "URL"
+  },
+  "home": {
+    "title": "トップページ",
+    "description": "Top description",
+    "keyword": "Top keyword",
+    "canonical": "Top URL"
+  }
+}

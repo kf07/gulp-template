@@ -10,6 +10,7 @@ const rename = require("gulp-rename");
 const htmlbeautify = require('gulp-html-beautify');
 const cmq = require('gulp-combine-media-queries');
 const csscomb = require('gulp-csscomb');
+const fs = require( 'fs' );
 
 const beautify_options = {
     'indent_with_tabs':true
@@ -56,11 +57,11 @@ gulp.task('script', function(){
 
 //EJS
 gulp.task("ejs", function() {
+    var json = JSON.parse(fs.readFileSync('src/ejs/common/meta.json'));
     gulp.src(
         ["src/ejs/**/*.ejs",'!' + "src/ejs/**/_*.ejs"]
     )
-        .pipe(ejs())
-        .pipe(rename({extname: ".html"})) //拡張子をhtmlに
+        .pipe(ejs({json}, {}, {ext: '.html'}))
         .pipe(gulp.dest("doc/")) //出力先
 });
 
