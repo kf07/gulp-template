@@ -1,0 +1,52 @@
+@import "_mixin.scss";
+
+input,
+button,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+}
+
+*, *:before, *:after{
+  box-sizing: border-box;
+}
+
+.clear:before,
+.clear:after {
+  content: '';
+  display: table;
+}
+.clear:after { clear: both; }
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family:"Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+}
+
+.pc {
+  @include sp-width {
+    display: none;
+  }
+}
+.sp {
+  display: none;
+  @include sp-width {
+    display: block;
+  }
+}

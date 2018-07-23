@@ -1,0 +1,7 @@
+@import "_variables.scss";
+
+@mixin sp-width {
+  @media screen and (max-width: $sp-width) {
+    @content;
+  }
+}
