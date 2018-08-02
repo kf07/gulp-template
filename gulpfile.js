@@ -39,7 +39,7 @@ gulp.task('sass', function () {
         .pipe(cmq())
         .pipe(csscomb())
         // cssフォルダー以下に保存
-        .pipe(gulp.dest('doc/css'))
+        .pipe(gulp.dest('doc/assets/css'))
         .pipe(browserSync.stream());
 });
 
@@ -83,6 +83,6 @@ gulp.task("default", function () {
 
     gulp.watch('src/sass/*.scss',['sass']);
     gulp.watch('doc/**/*.html',['html']);
-    gulp.watch('doc/js/*.js',['script']);
+    gulp.watch('doc/assets/js/*.js',['script']);
     gulp.watch('src/ejs/**/*.ejs',['ejs']);
 });
